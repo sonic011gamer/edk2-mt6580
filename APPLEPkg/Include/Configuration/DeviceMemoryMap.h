@@ -61,14 +61,10 @@ static ARM_MEMORY_REGION_DESCRIPTOR_EX gDeviceMemoryDescriptorEx[] = {
 //MemBase,   MemSize,   MemLabel(32 Char.), BuildHob, ResourceType, ResourceAttribute, MemoryType, CacheAttributes
 
 //------------- DDR Regions ------},
-{0x80000000, 0x04000000, "HLOS 1",           AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK},
-{0x84000000, 0x00100000, "UEFI FD",          AddMem, SYS_MEM, SYS_MEM_CAP, BsCode, WRITE_BACK},
-{0x85000000, 0x3A700000, "HLOS 2",           AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK},
-{0xbf700000, 0x00900000, "Display Reserved", AddMem, MEM_RES, WRITE_THROUGH, MaxMem, WRITE_THROUGH},
-
-//------------- Register Regions ----------
-{0x00000000, 0x80000000, "REG 1",           AddDev, MMAP_IO,  UNCACHEABLE, MmIO,   NS_DEVICE},
-{0xC0000000, 0x80000000, "REG 2",           AddDev, MMAP_IO,  UNCACHEABLE, MmIO,   NS_DEVICE},
+{0x80000000, 0x10000000, "HLOS 1",           AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK},
+{0x90000000, 0x00100000, "UEFI FD",          AddMem, SYS_MEM, SYS_MEM_CAP, BsCode, WRITE_BACK},
+{0xbf100000, 0x00900000, "Display Reserved", AddMem, MEM_RES, WRITE_THROUGH, MaxMem, WRITE_THROUGH},
+{0xff100000, 0x00900000, "Display Reserved", AddMem, MEM_RES, WRITE_THROUGH, MaxMem, WRITE_THROUGH},
 //------------- Terminator for MMU ----------
 {0, 0, "Terminator", 0, 0, 0, 0, 0}
 
